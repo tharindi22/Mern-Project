@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:wght@400;600&family=Titan+One&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    font-family: outfit;
+}
+
+/*  */
+.active hr{
+    @apply block
+}
+
+::-webkit-scrollbar{
+   @apply hidden 
+}
+
+@media (max-width:740px){
+    .active p{
+        @appiy text-white bg-primary
+    }
+}
