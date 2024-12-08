@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { AdminContext } from '../context/AdminContext'
 import axios from 'axios'
+import { toast } from 'react-toastify';
 
 const Login = () => {
   const [state, setState] = useState('Admin')
@@ -12,22 +13,7 @@ const Login = () => {
   const onSubmitHandler = async (event) =>{
       event.preventDefault()
 
-      try {
-        if (state === 'Admin') {
-          const {data} = await axios.post(backendUrl + '/api/admin/login',{email,password})
-
-          if (data.success) {
-            console.log(data.token);
-            
-          }
-
-        }else{
-
-        }
-
-      } catch (error) {
-        
-      }
+      
   }
 
   return (

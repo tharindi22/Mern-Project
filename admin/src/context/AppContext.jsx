@@ -1,6 +1,6 @@
 import React, { createContext, useState } from 'react';
 
-export const AppContext = createContext();
+export const AdminContext = createContext();
 
 const AppContextProvider = ({ children }) => {
   const [appData, setAppData] = useState(null);
