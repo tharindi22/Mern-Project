@@ -1,8 +1,18 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { AdminContext } from '../context/AdminContext'
 
 const Sidebar = () => {
+
+  const {aToken} = useContext(AdminContext)
+
   return (
-    <div>Sidebar</div>
+    <div>
+      {
+        aToken && <ul>
+          
+        </ul>
+      }
+    </div>
   )
 }
 
