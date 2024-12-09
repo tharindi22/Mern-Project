@@ -13,6 +13,24 @@ const Login = () => {
   const onSubmitHandler = async (event) =>{
       event.preventDefault()
 
+      try {
+        if (state === 'Admin') {
+          const {data} = await axios.post(backendUrl + '/api/admin/login',{email,password})
+          
+          if (data.success) {
+            localStorage.setItem('aToken',data.token)
+            setAToken(data.token)
+          } else{
+            toast.error(data.messege)
+          }
+
+        } else{
+
+        }
+      } catch (error) {
+        
+      }
+
       
   }
 
@@ -40,19 +58,16 @@ const Login = () => {
             required
           />
         </div>
-        <button className="bg-primary text-white w-full py-2 rounded mt-2 text-base">
+        <button  className="bg-primary text-white w-full py-2 rounded mt-2 text-base">
           Login
         </button>
         {state === 'Admin' ? (
-          <p>
-            Doctor Login?{' '}
-            <span
-              onClick={() => setState('Doctor')}
-              className="text-primary cursor-pointer"
-            >
-              Click here
-            </span>
-          </p>
+          <p> Doctor Login? <span onClick={() => setState('Doctor')}  className="text-primary cursor-pointer">Click here</span>
+              
+             
+            
+              
+            </p>
         ) : (
           <p>
             Admin Login?{' '}

@@ -1,4 +1,4 @@
-import { request } from "express"
+
 import validator from "validator"
 import bcrypt from 'bcrypt'
 import {v2 as cloudnary} from "cloudinary"
@@ -66,10 +66,10 @@ const addDoctor = async (req,res) => {
 }
 
 //API For admin Login
-const LoginAmin = async (req,res) =>{
+const LoginAdmin = async (req,res) =>{
     try{
        const{email,password} = req.body
-       if (email === process.env.ADMIN && password === process.env.ADMIN_PASSWORD) {
+       if (email === process.env.ADMIN_EMAIL && password === process.env.ADMIN_PASSWORD) {
         
         const token = jwt.sign(email+password,process.env.JWT_SECRET)
         res.json({success:true,token})
@@ -83,4 +83,4 @@ const LoginAmin = async (req,res) =>{
     }
 }
 
-export{addDoctor}
+export{addDoctor, LoginAdmin}
