@@ -3,8 +3,8 @@ import { assets } from '../../assets/assets'
 
 const AddDoctor = () => {
   return (
-    <form action="">
-      <p>Add Doctor</p>
+    <form className='m-5 w-full'>
+      <p className='mb-3 text-lg font-medium'>Add Doctor</p>
 
       <div>
         <div>
@@ -67,6 +67,25 @@ const AddDoctor = () => {
                 </select>
               </div>
             </div>
+
+            <div>
+              <p>Education</p>
+              <input type="text" placeholder='Education' required />
+            </div>
+
+            <div>
+              <p>Address</p>
+              <input type="text" placeholder='address 1' required />
+              <input type="text" placeholder='address 2' required />
+            </div>
+
+            <div>
+              <p>About Doctor</p>
+              <textarea type="text" placeholder='write about doctor' rows={5} required />
+            </div>
+
+            <button>Add doctor</button>
+
 
           </div>
         </div>
