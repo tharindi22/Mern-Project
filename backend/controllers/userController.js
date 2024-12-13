@@ -1,11 +1,11 @@
-import validator from ' validator '
-import bcrypt from ' bcrypt '
+import validator from 'validator'
+import bcrypt from 'bcrypt'
 import userModel from '../models/userModel.js'
-import jwt from ' jsonwebtoken '
+import jwt from 'jsonwebtoken'
 
 
 // API to register user
-const register = async (req,res) => {
+const registerUser = async (req,res) => {
     try {
         const {name,email,password} = req.body
 
