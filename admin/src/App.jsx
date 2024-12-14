@@ -7,6 +7,9 @@ import { AdminContext } from './context/AdminContext.jsx';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import Dashboard from './pages/Admin/Dashboard';
+import AllAppoinments from './pages/Admin/AllAppoinment'
+import AddDoctor from './pages/Admin/AddDoctor'
+import DoctorList from './pages/Admin/DoctorList.jsx'
 
 
 const App = () => {

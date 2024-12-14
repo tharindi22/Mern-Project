@@ -1,17 +1,15 @@
 import React, { useContext, useEffect } from 'react'
 import { AdminContext } from '../../context/AdminContext'
 
-function DocterList() {
+function DoctorList() {
 
     const {doctors,aToken,getAllDoctors,changeAvailability} = useContext(AdminContext)
 
     useEffect(()=>{
         if (aToken) {
-            getAllDoctors
+            getAllDoctors()
             
-        } else {
-            
-        }
+        } 
     },[aToken])
 
   return (
@@ -19,7 +17,7 @@ function DocterList() {
         <h1 className='text-lg font-medium'>All Doctors</h1>
         <div className='w-full flex flex-wrap gap-4 pt-5 gap-y-6'>
             {
-                doctors.map(()=>(
+                doctors.map((item,index)=>(
                     <div className='border border-indigo-200 rounded-xl max-w-56 overflow-hidden cursor-pointer group' key={index}>
                         <img className='bg-indigo-50 group-hover:bg-primary transition-all duration-500' src={item.image} alt="" />
                         <div className='p-4'>
@@ -38,4 +36,4 @@ function DocterList() {
   )
 }
 
-export default DocterList
+export default DoctorList

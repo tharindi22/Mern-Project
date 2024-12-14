@@ -8,7 +8,7 @@ const Login = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  const {setAToken,backendUrl} = useState(AdminContext)
+  const {setAToken,backendUrl} = useContext(AdminContext)
   
   const onSubmitHandler = async (event) =>{
       event.preventDefault()

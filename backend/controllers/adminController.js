@@ -9,7 +9,7 @@ import jwt from 'jsonwebtoken'
 //API for adding doctor
 const addDoctor = async (req,res) => {
     try{
-        const{name,password,speciality,degree,experience,about,fees,address} = req.body
+        const{name,email,password,speciality,degree,experience,about,fees,address} = req.body
         const imageFile = req.file 
         
         // checking for all data to add doctor
@@ -87,7 +87,7 @@ const LoginAdmin = async (req,res) =>{
 const allDoctors = async (req,res) => {
     try {
       const doctors = await doctorModel.find({}).select('-password') 
-      res.json({success:false,message:error.message})
+      res.json({success:true,doctors})
       
     } catch (error) {
         console.log(error)
