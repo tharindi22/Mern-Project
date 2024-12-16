@@ -94,7 +94,7 @@ const getProfile = async (req,res) => {
     }
 }
 
-// API to update user profile
+// API to update user profile 
 const updateProfile = async (req,res) => {
     try {
         const {userId,name,phone,address,dob,gender} = req.body
