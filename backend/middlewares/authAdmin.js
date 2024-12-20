@@ -6,11 +6,11 @@ import jwt from 'jsonwebtoken'
 const authAdmin = async (req,res,next) => {
     try{
 
-        const {aToken} = req.headers.authorization
-        if (!aToken) {
+        const {atoken} = req.headers.authorization
+        if (!atoken) {
             return res.json({success:false,message:'Not Authorized Login Again'})
         }
-        const token_decode = jwt.verify(aToken,process.env.JWT_SECRET)
+        const token_decode = jwt.verify(atoken,process.env.JWT_SECRET)
         if (token_decode !== process.env.ADMIN_EMAIL + process.env.ADMIN_PASSWORD) {
             return res.json({success:false,message:'Not Authorized Login Again'})
         }
